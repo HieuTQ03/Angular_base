@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product A",
+      "price": 200,
+      "image": "https://picsum.photos/100/100",
+      "quanlity": 20,
+      "description": "San pham A"
+    },
+    {
+      "name": "Sản phẩm B",
+      "price": 200,
+      "id": 2,
+      "image": "https://picsum.photos/100/101",
+      "quanlity": 50,
+      "description": "San pham B"
+    },
+    {
+      "name": "Sản phẩm C",
+      "price": 300,
+      "id": 3,
+      "image": "https://picsum.photos/100/102",
+      "quanlity": 90,
+      "description": "San pham C"
+    },
+    {
+      "name": "Sản phẩm D",
+      "price": 123,
+      "id": 4,
+      "image": "https://picsum.photos/100/103",
+      "quanlity": 10,
+      "description": "San pham D"
+    }
+  ],
+  "users": [
+    {
+      "email": "hieu@gmail.com",
+      "password": "$2a$10$wGM86Not1/tT.UVY3EUQI.guA8vvRkhocx.btONwcVJV0MQu66GGe",
+      "id": 2
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$3ZVDhC7plw1hGFglJVDXoOpY6mB5.OCHQt6/OPwHrbQuesojBBYoe",
+      "id": 1
+    }
+  ]
+}

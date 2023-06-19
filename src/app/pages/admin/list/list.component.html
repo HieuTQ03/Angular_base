@@ -1,0 +1,35 @@
+<div class="mt-4" >   
+    <h2>Quản lý sản phẩm</h2> 
+</div> 
+<div class="container d-flex justify-content-end">
+<a routerLink="/admin/products/add" class="btn btn-primary">Thêm sản phẩm</a>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quality</th>
+        <th scope="col">Description</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products ; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{product.name}}</td>
+        <td><img src="{{product.image}}" alt=""></td>
+        <td>{{product.price}}</td>
+        <td>{{product.quanlity}}</td>
+        <td>{{product.description}}</td>
+        <td>
+        <button class="btn btn-danger me-3" (click)="onHandelRemove(product.id)">Delete</button>
+        <button class="btn btn-primary" routerLink="/admin/products/{{product.id}}/edit">Edit</button>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>

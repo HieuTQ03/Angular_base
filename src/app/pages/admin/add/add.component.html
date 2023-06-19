@@ -1,0 +1,66 @@
+<h2 class="mt-4">Thêm sản phẩm</h2>
+<form [formGroup]="form" (ngSubmit)="onHandelSubmit()">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+
+        <div class="text-danger"
+            *ngIf="form.get('name')?.invalid && form.get('name')?.touched||form.get('name')?.dirty">
+            <div *ngIf="form.get('name')?.hasError('required')">
+                Bắt buộc phải nhập tên
+            </div>
+            <div *ngIf="form.get('name')?.hasError('minlength')">
+                Tên phải chứa ít nhất 3 ký tự
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Iamge</label>
+        <input type="text" class="form-control" formControlName="image">
+        <div class="text-danger"
+            *ngIf="form.get('image')?.invalid && form.get('image')?.touched||form.get('image')?.dirty">
+            <div *ngIf="form.get('image')?.hasError('required')">
+                Bắt buộc phải nhập ảnh
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="price">
+        <div class="text-danger"
+            *ngIf="form.get('price')?.invalid && form.get('price')?.touched||form.get('price')?.dirty">
+            <div *ngIf="form.get('price')?.hasError('required')">
+                Bắt buộc phải nhập giá
+            </div>
+            <div *ngIf="form.get('price')?.hasError('min')">
+                Giá phải > 0
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="description">
+        <div class="text-danger"
+            *ngIf="form.get('description')?.invalid && form.get('description')?.touched||form.get('description')?.dirty">
+
+            <div *ngIf="form.get('description')?.hasError('minlength')">
+                Mô tả phải lớn hơn 6 ký tự hoặc có thể bỏ trống
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="quanlity" class="form-label">Quanlity</label>
+        <input type="number" class="form-control" formControlName="quanlity">
+        <div class="text-danger"
+            *ngIf="form.get('quanlity')?.invalid && form.get('quanlity')?.touched||form.get('quanlity')?.dirty">
+            <div *ngIf="form.get('quanlity')?.hasError('required')">
+                Bắt buộc phải nhập số lượng
+            </div>
+            <div *ngIf="form.get('quanlity')?.hasError('min')">
+                Số lượng phải > 0
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

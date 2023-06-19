@@ -1,0 +1,36 @@
+<h2 class="mt-4">Đăng nhập</h2>
+<div *ngIf="error" class="text-danger">{{ error }}</div>
+<form [formGroup]="form" (ngSubmit)="onHandelSubmit()">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email">
+
+        <div class="text-danger"
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched||form.get('email')?.dirty">
+            <div *ngIf="form.get('email')?.hasError('required')">
+                Bắt buộc phải nhập email
+            </div>
+            <div *ngIf="form.get('email')?.hasError('email')">
+                Email không đúng định dạng 
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+        <div class="text-danger"
+            *ngIf="form.get('password')?.invalid && form.get('password')?.touched||form.get('password')?.dirty">
+            <div *ngIf="form.get('password')?.hasError('required')">
+                Bắt buộc phải nhập mật khẩu
+            </div>
+            <div *ngIf="form.get('password')?.hasError('minlength')">
+                Mật khẩu phải nhập ít nhất 6 ký tự 
+            </div>
+        </div>
+    </div>
+
+
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
